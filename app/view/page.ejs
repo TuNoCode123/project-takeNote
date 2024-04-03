@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      form input {
+        width: 500px;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/savePage/<%= paramUser %>" method="post">
+      <input type="text" placeholder="tieu de" name="art" />
+      <textarea name="dcr" cols="30" rows="30"></textarea>
+      <button type="submit">save</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .card {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .card div input {
+      width: 300px;
+      height: 100px;
+    }
+    #tr {
+      padding: 10px;
+      border: 1px solid black;
+      position: absolute;
+      bottom: 20px;
+    }
+  </style>
+  <body>
+    <div class="card">
+      <% for(let i=0; i < kq.results.length ; i++) {%>
+      <div>
+        <form
+          action="/update/<%= kq.results[i].id %>/idUser/<%= kq.id %>"
+          method="post"
+        >
+          <textarea name="dcr" cols="30" rows="10">
+<%= kq.results[i].description %></textarea
+          >
+          <a href="/delete/<%= kq.results[i].id %>/idUser/<%= kq.id %>"
+            >delete</a
+          >
+          <button type="submit">update</button>
+          <a href="/viewAll/<%= kq.results[i].id %>/idUser/<%= kq.id %>"
+            >viewALL</a
+          >
+        </form>
+      </div>
+      <% } %>
+    </div>
+    <a href="/loginData" id="tr">house</a>
+  </body>
+</html>

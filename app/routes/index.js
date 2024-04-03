@@ -1,0 +1,27 @@
+const routerHome = require("./home");
+const routerLogin = require("./login");
+const routerSingup = require("./singup");
+const routerSaveData = require("./saveData");
+const routerSaveDataLogin = require("./loginData");
+const routerAddNote = require("./addNote");
+const routeSavePage = require("./savePage");
+const routerMonitor = require("./monitor");
+const routerUpdate = require("./update");
+const routerUpdateData = require("./updateData");
+const routerDeleteData = require("./delete");
+const routerViewAll = require("./viewAll");
+const router = (app) => {
+  app.use("/", routerHome);
+  app.use("/", routerLogin);
+  app.use("/", routerSingup);
+  app.use("/", routerSaveData);
+  app.use("/", routerSaveDataLogin);
+  app.use("/", routerAddNote);
+  app.use("/", routeSavePage);
+  app.use("/", routerMonitor);
+  app.use("/", routerUpdate);
+  app.use("/", routerUpdateData);
+  app.use("/", routerDeleteData);
+  app.use("/", routerViewAll);
+};
+module.exports = router;
